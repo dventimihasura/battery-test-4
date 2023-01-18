@@ -6,5 +6,5 @@ siege.log:
 	sleep 10
 	curl -s -H 'Content-type: application/json' --data-binary @config.json "http://127.0.0.1:8080/v1/metadata" | jq -r '.'
 	mkdir -p /.siege
-	siege -j -c50 -t10S -b -i "http://127.0.0.1:8080/api/rest/abalance/10" > $@
+	siege -j -c50 -t10S "http://127.0.0.1:8080/api/rest/abalance/10" > $@
 
